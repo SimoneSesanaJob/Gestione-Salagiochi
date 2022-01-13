@@ -113,7 +113,7 @@ class _ModificaDatiState extends State<ModificaDati> {
                                           return Text(
                                             "Errore",
                                             style: default_textStyke.copyWith(
-                                              fontSize: larghezza_schermo / 220
+                                              fontSize: larghezza_schermo / 20
                                             ),
                                           );
                                         } else {
