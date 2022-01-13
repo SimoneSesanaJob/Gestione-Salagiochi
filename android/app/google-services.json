@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "634522820085",
+    "project_id": "salagiochi-5931f",
+    "storage_bucket": "salagiochi-5931f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634522820085:android:c598295a491f60a3ac94bc",
+        "android_client_info": {
+          "package_name": "com.example.gestione_salagiochi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634522820085-efqhp4mbhhongkekou5g10b5al4qit4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPc5iqBUb9QFFiUyLT1fHNJmOO-cIuQgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634522820085-efqhp4mbhhongkekou5g10b5al4qit4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634522820085:android:3e7837cc39a70f22ac94bc",
+        "android_client_info": {
+          "package_name": "com.example.salagiochi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634522820085-efqhp4mbhhongkekou5g10b5al4qit4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPc5iqBUb9QFFiUyLT1fHNJmOO-cIuQgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634522820085-efqhp4mbhhongkekou5g10b5al4qit4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
