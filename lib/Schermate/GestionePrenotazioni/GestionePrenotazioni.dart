@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:gestione_salagiochi/Altro/Variabili.dart';
 import 'package:gestione_salagiochi/Classi/Prenotazione.dart';
 import 'package:gestione_salagiochi/Schermate/GestionePrenotazioni/Dialoghi/DialogoEliminaPrenotazione.dart';
 import 'package:gestione_salagiochi/Schermate/Shared/AppBar.dart';
@@ -56,6 +57,9 @@ class _GestionePrenotazioniState extends State<GestionePrenotazioni> {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: (){
+                              setState(() {
+                                indicePrenotazione = index;
+                              });
                               Navigator.pushNamed(context, "/dati_prenotazione");
                             },
                             child: Card(
@@ -83,7 +87,7 @@ class _GestionePrenotazioniState extends State<GestionePrenotazioni> {
                                     color: Colors.red
                                   ),
                                   onPressed: (){
-                                    dialogoEliminaPrenotazione(context, data["giorni"][index]["indiceInizio"], data["giorni"][index]["indiceFine"], data["giorni"][index]["data"], index);
+                                    dialogoEliminaPrenotazione(context, data["giorni"][index]["indiceInizio"], data["giorni"][index]["indiceFine"], data["giorni"][index]["data"], index, false);
                                   },
                                 ),
                               ),

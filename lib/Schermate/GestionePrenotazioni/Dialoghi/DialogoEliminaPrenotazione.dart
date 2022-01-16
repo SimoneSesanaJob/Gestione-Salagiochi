@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gestione_salagiochi/Classi/Prenotazione.dart';
-void dialogoEliminaPrenotazione(BuildContext context, int indiceInizio, int indiceFine, String data, int indicePrenotazione){
+void dialogoEliminaPrenotazione(BuildContext context, int indiceInizio, int indiceFine, String data, int indicePrenotazione, bool isDati){
 
   showGeneralDialog(barrierColor: Colors.black.withOpacity(0.5),
       transitionBuilder: (context, a1, a2, widget) {
@@ -50,6 +50,9 @@ void dialogoEliminaPrenotazione(BuildContext context, int indiceInizio, int indi
                       onPressed: (){
                         eliminaPrenotazione(indiceInizio, indiceFine, indicePrenotazione, data);
                         Navigator.pop(context);
+                        if(isDati == true){
+                          Navigator.pop(context);
+                        }
                       },
                       child: Text(
                         "SI",
