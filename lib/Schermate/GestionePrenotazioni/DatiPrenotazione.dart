@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gestione_salagiochi/Altro/Variabili.dart';
+import 'package:gestione_salagiochi/Schermate/GestionePrenotazioni/Dialoghi/DialogoModificaInformazione.dart';
 import 'package:gestione_salagiochi/Schermate/Shared/AppBar.dart';
 
 import 'Dialoghi/DialogoEliminaPrenotazione.dart';
@@ -51,19 +52,19 @@ class _DatiPrenotazioneState extends State<DatiPrenotazione> {
                     children: [
 
                       //Nome
-                      cardDati("Nome", data["giorni"][indicePrenotazione]["nome"]),
+                      cardDati("Nome", data["giorni"][indicePrenotazione]["nome"], context),
 
                       //Cognome
-                      cardDati("Cognome", data["giorni"][indicePrenotazione]["cognome"]),
+                      cardDati("Cognome", data["giorni"][indicePrenotazione]["cognome"], context),
 
                       //Indirizzo mail
-                      cardDati("Indirizzo mail", data["giorni"][indicePrenotazione]["mail"]),
+                      cardDati("Indirizzo mail", data["giorni"][indicePrenotazione]["mail"], context),
 
                       //Numero di telefono
-                      cardDati("Numero di telefono", data["giorni"][indicePrenotazione]["telefono"]),
+                      cardDati("Numero di telefono", data["giorni"][indicePrenotazione]["telefono"], context),
 
                       //Orario prenotazione
-                      cardDati("Orario prenotazione", ((data["giorni"][indicePrenotazione]["orarioInizio"]) + ":" + (data["giorni"][indicePrenotazione]["orarioFine"]))),
+                      cardOrario("Orario prenotazione", ((data["giorni"][indicePrenotazione]["orarioInizio"]) + " - " + (data["giorni"][indicePrenotazione]["orarioFine"])), context),
 
                       //Bottone eliminazione prenotazione
                       Padding(
@@ -111,7 +112,7 @@ class _DatiPrenotazioneState extends State<DatiPrenotazione> {
 /*
   Carta con i dati
 */
-Padding cardDati(String titolo, String sottotitolo){
+Padding cardDati(String titolo, String sottotitolo, BuildContext context){
   return Padding(
     padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
     child: Card(
@@ -121,6 +122,9 @@ Padding cardDati(String titolo, String sottotitolo){
       elevation: 0,
       color: Colors.white.withOpacity(0.2),
       child: ListTile(
+        onTap: (){
+          modificaInformazione(context, titolo);
+        },
         title: Text(
           titolo,
           style: TextStyle(
@@ -138,3 +142,36 @@ Padding cardDati(String titolo, String sottotitolo){
     ),
   );
 }
+
+
+/*
+  Carta con i dati
+*/
+Padding cardOrario(String titolo, String sottotitolo, BuildContext context){
+  return Padding(
+    padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+    child: Card(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(13)
+      ),
+      elevation: 0,
+      color: Colors.white.withOpacity(0.2),
+      child: ListTile(
+        title: Text(
+          titolo,
+          style: TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        subtitle: Text(
+          sottotitolo,
+          style: TextStyle(
+              fontSize: 16
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
