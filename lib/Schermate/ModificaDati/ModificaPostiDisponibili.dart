@@ -61,7 +61,7 @@ void modificaPostiDisponibili(BuildContext context){
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                     child: FlatButton(
                       onPressed: (){
-                        FirebaseFirestore.instance.collection('dati').doc('dati_tempo_reale').update({'max': posti_disponibili});
+                        FirebaseFirestore.instance.collection('dati').doc('dati_tempo_reale').update({'posti_massimi': posti_disponibili});
                         Navigator.pop(context);
                       },
                       child: Text(
